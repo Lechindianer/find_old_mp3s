@@ -1,18 +1,9 @@
-defmodule FindOldMp3s do
-  @moduledoc """
-  Documentation for `FindOldMp3s`.
-  """
+defmodule FindOldMp3s.Main do
+  use Bakeware.Script
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> FindOldMp3s.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  @impl Bakeware.Script
+  def main(_args) do
+    IO.puts "Hello, World!"
+    0
   end
 end

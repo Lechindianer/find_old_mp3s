@@ -1,21 +1,13 @@
 # FindOldMp3s
 
-**TODO: Add description**
+This project creates a CLI tool which will find MP3 files with bad bitrate. Bakeware will produce a standalone binary
+file - this is NO escript release!
 
-## Installation
+## Setup
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `find_old_mp3s` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:find_old_mp3s, "~> 0.1.0"}
-  ]
-end
+```shell
+mix deps.get
+MIX_ENV=prod mix release
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/find_old_mp3s>.
-
+The built binary will be in `_build/prod/rel/bakeware/find_old_mp3s`
