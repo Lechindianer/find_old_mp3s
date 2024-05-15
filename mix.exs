@@ -26,7 +26,9 @@ defmodule FindOldMp3s.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:bakeware, "~> 0.2.4"}
+      {:bakeware, "~> 0.2.4"},
+      {:credo, "~> 1.7.6", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.4.3", only: [:dev, :test], runtime: false},
     ]
   end
 

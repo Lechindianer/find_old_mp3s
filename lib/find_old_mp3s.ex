@@ -1,4 +1,8 @@
 defmodule FindOldMp3s.Main do
+  @moduledoc """
+  Main module to run when invoking the binary
+  """
+
   use Bakeware.Script
 
   @impl Bakeware.Script
