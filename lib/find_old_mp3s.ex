@@ -25,6 +25,20 @@ defmodule FindOldMp3s.Application do
     end
   end
 
+  defp execute({:error, :parsing_error}) do
+    IO.puts """
+    Help command output
+
+    Possible options:
+      Long option    short option    description
+      --help         -h              Show this help
+      --type         -t              Give some file audio file type ending like 'ogg' or 'mp3'
+      --path         -p              Root path to search files, search will be recursive
+    """
+
+    System.halt(1)
+  end
+
   defp execute() do
    System.halt(0)
   end
