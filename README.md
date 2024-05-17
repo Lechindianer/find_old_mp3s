@@ -10,10 +10,18 @@ mix deps.get
 MIX_ENV=prod mix release
 ```
 
-The built binary will be in `_build/prod/rel/bakeware/find_old_mp3s`
+The built binary will be in `burrito_out/example_cli_app_linux`
 
 ## Usage
 
 ```shell
-_build/prod/rel/bakeware/find_old_mp3s "~/**/*.{mp3}"
+./burrito_out/example_cli_app_linux "~/**/*.{mp3}"
+```
+
+## Development
+
+Clean cache:
+
+```shell
+yes | burrito_out/example_cli_app_linux maintenance uninstall
 ```

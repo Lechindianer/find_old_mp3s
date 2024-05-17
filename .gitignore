@@ -25,4 +25,7 @@ find_old_mp3s-*.tar
 # Temporary files, for example, from tests.
 /tmp/
 
+# Generated binary files
+/burrito_out/
+
 .idea
