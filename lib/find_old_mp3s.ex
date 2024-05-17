@@ -8,4 +8,24 @@ defmodule FindOldMp3s.Application do
     |> parse_options
     |> execute
   end
+
+  defp parse_options(args) do
+    options = OptionParser.parse(
+      args,
+      switches: [path: :string, type: :string, help: :boolean],
+      aliases: [p: :path, t: :type, h: :help]
+    )
+
+    case options do
+      {opts, [], []} ->
+        {:ok, opts}
+
+      {opts, b, c} ->
+        {:error, :parsing_error}
+    end
+  end
+
+  defp execute() do
+   System.halt(0)
+  end
 end
