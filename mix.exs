@@ -28,7 +28,7 @@ defmodule FindOldMp3s.MixProject do
     [
       {:burrito, "~> 1.0"},
       {:credo, "~> 1.7.6", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.4.3", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.4.3", only: [:dev, :test], runtime: false}
     ]
   end
 
@@ -38,7 +38,7 @@ defmodule FindOldMp3s.MixProject do
         steps: [:assemble, &Burrito.wrap/1],
         burrito: [
           targets: [
-            linux: [os: :linux, cpu: :x86_64],
+            linux: [os: :linux, cpu: :x86_64]
           ]
         ]
       ]
