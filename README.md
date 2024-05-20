@@ -5,6 +5,14 @@ file - this is NO escript release!
 
 ## Setup
 
+You must have Zig installed for creating the binary
+
+```shell
+asdf plugin-add zig https://github.com/cheetah/asdf-zig.git
+asdf install zig 0.11.0
+asdf global zig 0.11.0
+```
+
 ```shell
 mix deps.get
 MIX_ENV=prod mix release
