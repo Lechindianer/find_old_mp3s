@@ -3,7 +3,7 @@ defmodule FindOldMp3s.Application do
   Main module to run when invoking the binary
   """
 
-  @dialyzer {:no_return, show_exiftool_error: 0, start: 2 }
+  @dialyzer {:no_return, show_exiftool_error: 0, start: 2}
 
   def start(_, _) do
     check_exif_tools()
@@ -80,7 +80,10 @@ defmodule FindOldMp3s.Application do
       System.halt(0)
     end
 
-    Enum.each(files, fn file -> IO.puts(file) end)
+    IO.puts("Running exiftool...\n")
+
+    Stream.map(files, fn file -> {get_bitrate(file), file} end)
+    |> Enum.each(fn {bitrate, path} -> IO.puts("#{bitrate}\t|\t#{path}") end)
   end
 
   defp show_exiftool_error() do
@@ -111,5 +114,14 @@ defmodule FindOldMp3s.Application do
       find_old_mp3s --path "~" --type "ogg" --type "mp3"
 
     """)
+  end
+
+  defp get_bitrate(file) do
+    System.cmd("exiftool", ["-AudioBitrate", file])
+    |> elem(0)
+    |> String.split(":")
+    |> Enum.at(1, "---")
+    |> String.trim()
+    |> String.pad_trailing(8)
   end
 end
