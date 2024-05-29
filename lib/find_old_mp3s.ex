@@ -4,11 +4,20 @@ defmodule FindOldMp3s.Application do
   """
 
   def start(_, _) do
+    check_exif_tools()
+
     get_options()
     |> validate_options()
     |> execute()
 
     System.halt(0)
+  end
+
+  defp check_exif_tools() do
+    case System.find_executable("exiftool") do
+      nil -> show_exiftool_error()
+      _ -> true
+    end
   end
 
   defp get_options() do
@@ -70,6 +79,15 @@ defmodule FindOldMp3s.Application do
     end
 
     Enum.each(files, fn file -> IO.puts(file) end)
+  end
+
+  defp show_exiftool_error() do
+    IO.puts(
+      :stderr,
+      "This command needs to have tool 'exiftool' installed! Please consult your OS manual in order to install it."
+    )
+
+    System.halt(2)
   end
 
   defp print_help() do
