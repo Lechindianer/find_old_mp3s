@@ -29,3 +29,5 @@ find_old_mp3s-*.tar
 /burrito_out/
 
 .idea
+
+.elixir_ls/
