@@ -3,6 +3,8 @@ defmodule FindOldMp3s.Application do
   Main module to run when invoking the binary
   """
 
+  @dialyzer {:no_return, show_exiftool_error: 0, start: 2 }
+
   def start(_, _) do
     check_exif_tools()
 
