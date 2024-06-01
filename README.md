@@ -1,6 +1,6 @@
 # FindOldMp3s
 
-This project creates a CLI tool which will find MP3 files with bad bitrate. Bakeware will produce a standalone binary
+This project creates a CLI tool which will find MP3 files with bad bitrate. Burrito will produce a standalone binary
 file - this is NO escript release!
 
 ## Setup
