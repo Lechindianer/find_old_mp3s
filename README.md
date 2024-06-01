@@ -23,7 +23,7 @@ The built binary will be in `burrito_out/example_cli_app_linux`
 ## Usage
 
 ```shell
-./burrito_out/example_cli_app_linux "~/**/*.{mp3}"
+./burrito_out/example_cli_app_linux --path "~" --type "ogg" --type "mp3"
 ```
 
 ## Development
